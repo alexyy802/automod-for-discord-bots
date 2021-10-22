@@ -27,7 +27,10 @@ async def on_message(self,message):
 
         if message.content in banword:
           await message.delete()
-          await message.channel.send(message.author.mention+", Hey! that word isnt allowed in here!")
+          e = discord.Embed(title=f"{message.author},Hey! that word isnt allowed here!")
+          e.set_footer(text="Automod made by : NotAlexy_Kyu#4003") #<- dont remove this!
+          e.set_image(url="https://www.kindpng.com/picc/m/65-650060_no-entry-png-transparent-png.png")
+          await message.channel.send(embed=e)
         else:
           return
 
